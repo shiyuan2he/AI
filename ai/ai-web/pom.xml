@@ -9,12 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ai-voice</artifactId>
-    <packaging>war</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>ai-web</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ai-web-chat</module>
+    </modules>
+
+
 </project>

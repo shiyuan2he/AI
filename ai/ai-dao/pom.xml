@@ -9,20 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ai-base</artifactId>
+    <artifactId>ai-dao</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ai-dao-log</module>
+        <module>ai-dao-chat</module>
+    </modules>
 
-    <properties>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.hsy.java</groupId>
-            <artifactId>java-util</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.hsy.ai</groupId>
-            <artifactId>ai-bean</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>
