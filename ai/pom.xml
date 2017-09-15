@@ -15,6 +15,7 @@
         <module>ai-service</module>
         <module>ai-web</module>
         <module>ai-server</module>
+        <module>ai-datamodel</module>
     </modules>
     <properties>
         <!--servlet start-->
