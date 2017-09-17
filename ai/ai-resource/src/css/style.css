@@ -1,0 +1,94 @@
+@font-face
+{
+    font-family: HiraginoSans;
+    src: url('冬青黑体W3.otf');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,
+ol {
+    list-style: none;
+}
+img {
+    border: none;
+}
+input,
+select,
+textarea,
+button {
+    outline: none;
+    border: none;
+    background: none;
+}
+textarea {
+    resize: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: #ccc;
+}
+img {
+    vertical-align: top;
+}
+body {
+    width:7.5rem;
+    font-size: 0.3rem;
+    background: #eeeeee;
+    color: #000;
+    font-family:Helvetica,HiraginoSans;
+    margin: 0 auto;
+    position:relative;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+}
+option {
+    text-align: center;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix::before,
+.clearfix::after {
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/*按钮样式*/
+.btndiv{
+    text-align:center;
+    margin-top: 0.9rem;
+}
+.submit-btn{
+    display:inline-block;
+    width:6.78rem;
+    height:0.975rem;
+    font-size:0.36rem;
+    line-height:0.975rem;
+    background:#ff6b2a;
+    color:#fff;
+    border-radius:0.13rem;
+}
+.colorff6b{
+    color:#ff6b2a;
+}
+.colora1{
+    color:#a1a1a1;
+}
+.color66{
+    color:#666;
+}
+.colorf9{
+    color:#f9ed89;
+}

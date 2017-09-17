@@ -11,8 +11,10 @@
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
     ">
+    <!-- 声明使用注解的风格 -->
+    <context:annotation-config/>
     <!--扫描web相关的controller-->
-    <context:component-scan base-package="com.hsy.ai.web.chat.controller"/>
+    <context:component-scan base-package="com.hsy.ai"/>
     <!--简化配置:
        1、自动注册DefaultAnnotationHandlerMapping,AnnotationMethodHandlerAdapter
        2、提供一系列:数据绑定,数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持
@@ -23,14 +25,19 @@
     	1、加入对静态资源的处理:js,css,gif,png
     	2、允许使用"/"做整体映射
     -->
+
+    <!-- 静态资源(js/image)的访问 -->
+    <!--<mvc:resources location="/js/" mapping="/js/**"/>-->
     <mvc:default-servlet-handler/>
     <import resource="spring-dataSource-ai.xml"/>
+    <import resource="spring-resource.xml"/>
+    <import resource="spring-thread.xml"/>
     <!--<import resource="spring-dao.xml"/>
     <import resource="spring-redis.xml"/>
     <import resource="spring-service.xml"/>
     <import resource="spring-quartz.xml"/>
     <import resource="spring-aop.xml"/>
-    <import resource="spring-thread.xml"/>
+
     <import resource="spring-tx.xml"/>-->
 	<!--全局异常捕捉 -->
 	<bean class="com.hsy.ai.web.chat.exception.GlobalException"/>

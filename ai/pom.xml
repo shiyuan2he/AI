@@ -16,10 +16,12 @@
         <module>ai-web</module>
         <module>ai-server</module>
         <module>ai-datamodel</module>
+        <module>ai-resource</module>
     </modules>
     <properties>
         <!--servlet start-->
         <version.servlert.api>3.1.0</version.servlert.api>
+        <version.jstl>1.2</version.jstl>
         <!--servlet end-->
 
         <!--test start-->
@@ -47,6 +49,13 @@
         <version.mariadb.clent>2.0.3</version.mariadb.clent>
         <version.druid>1.1.3</version.druid>
         <!--db end-->
+
+        <!--compile start-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <!--compile end-->
     </properties>
 
 
@@ -93,6 +102,11 @@
                 <version>${version.spring}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${version.spring}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${version.servlert.api}</version>
@@ -127,7 +141,31 @@
                 <artifactId>ai-web-chat</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
+            <dependency>
+                <groupId>com.hsy.ai</groupId>
+                <artifactId>ai-resource</artifactId>
+                <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${version.jstl}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
-
+    <build>
+        <finalName>ai</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

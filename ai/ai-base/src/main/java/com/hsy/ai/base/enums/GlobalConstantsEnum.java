@@ -1,4 +1,4 @@
-package com.hsy.ai.web.chat.enums;
+package com.hsy.ai.base.enums;
 
 /**
  * @author heshiyuan
@@ -10,7 +10,7 @@ package com.hsy.ai.web.chat.enums;
  * Copyright (c) 2017 shiyuan4work@sina.com All rights reserved.
  * @price ¥5    微信：hewei1109
  */
-public enum ConstantsEnum {
+public enum GlobalConstantsEnum {
     SESSION_KEY("sessionKey","session的key"),
     // 系统异常
     SESSION_IS_OUT_TIME("99980003", "会话超时"),
@@ -27,7 +27,7 @@ public enum ConstantsEnum {
     private String code ;
     private String msg ;
 
-    ConstantsEnum(String code, String msg) {
+    GlobalConstantsEnum(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }

@@ -13,10 +13,10 @@ import java.util.ResourceBundle;
  * @github https://github.com/shiyuan2he.git
  * Copyright (c) 2016 shiyuan4work@sina.com All rights reserved
  */
-public class PropertiesFileUtil {
+public class PropertiesFileHelper {
 
     // 当打开多个资源文件时，缓存资源文件
-    private static HashMap<String, PropertiesFileUtil> configMap = new HashMap<String, PropertiesFileUtil>();
+    private static HashMap<String, PropertiesFileHelper> configMap = new HashMap<String, PropertiesFileHelper>();
     // 打开文件时间，判断超时使用
     private Date loadTime = null;
     // 资源文件
@@ -27,24 +27,24 @@ public class PropertiesFileUtil {
     private static final Integer TIME_OUT = 60 * 1000;
 
     // 私有构造方法，创建单例
-    private PropertiesFileUtil(String name) {
+    private PropertiesFileHelper(String name) {
         this.loadTime = new Date();
         this.resourceBundle = ResourceBundle.getBundle(name);
     }
 
-    public static synchronized PropertiesFileUtil getInstance() {
+    public static synchronized PropertiesFileHelper getInstance() {
         return getInstance(NAME);
     }
 
-    public static synchronized PropertiesFileUtil getInstance(String name) {
-        PropertiesFileUtil conf = configMap.get(name);
+    public static synchronized PropertiesFileHelper getInstance(String name) {
+        PropertiesFileHelper conf = configMap.get(name);
         if (null == conf) {
-            conf = new PropertiesFileUtil(name);
+            conf = new PropertiesFileHelper(name);
             configMap.put(name, conf);
         }
         // 判断是否打开的资源文件是否超时1分钟
         if ((new Date().getTime() - conf.getLoadTime().getTime()) > TIME_OUT) {
-            conf = new PropertiesFileUtil(name);
+            conf = new PropertiesFileHelper(name);
             configMap.put(name, conf);
         }
         return conf;

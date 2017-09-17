@@ -1,7 +1,7 @@
 package com.hsy.ai.dao.log;
 
 import com.hsy.ai.base.utils.MybatisGeneratorUtil;
-import com.hsy.ai.base.utils.PropertiesFileUtil;
+import com.hsy.ai.base.utils.PropertiesFileHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +21,10 @@ public class Generator {
 	private static String DATABASE = "ai";
 	private static String TABLE_PREFIX = "t_ai";
 	private static String PACKAGE_NAME = "com.hsy.ai.chat";
-	private static String JDBC_DRIVER = PropertiesFileUtil.getInstance("generator").get("generator.jdbc.driver");
-	private static String JDBC_URL = PropertiesFileUtil.getInstance("generator").get("generator.jdbc.url");
-	private static String JDBC_USERNAME = PropertiesFileUtil.getInstance("generator").get("generator.jdbc.username");
-	private static String JDBC_PASSWORD = PropertiesFileUtil.getInstance("generator").get("generator.jdbc.password");
+	private static String JDBC_DRIVER = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.driver");
+	private static String JDBC_URL = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.url");
+	private static String JDBC_USERNAME = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.username");
+	private static String JDBC_PASSWORD = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.password");
 	// 需要insert后返回主键的表配置，key:表名,value:主键名
 	private static Map<String, String> LAST_INSERT_ID_TABLES = new HashMap<>();
 	static {
