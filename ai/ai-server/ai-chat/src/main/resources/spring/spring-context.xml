@@ -32,7 +32,8 @@
     <import resource="spring-dataSource-ai.xml"/>
     <import resource="spring-resource.xml"/>
     <import resource="spring-thread.xml"/>
-    <!--<import resource="spring-dao.xml"/>
+    <import resource="spring-dao.xml"/>
+    <!--
     <import resource="spring-redis.xml"/>
     <import resource="spring-service.xml"/>
     <import resource="spring-quartz.xml"/>

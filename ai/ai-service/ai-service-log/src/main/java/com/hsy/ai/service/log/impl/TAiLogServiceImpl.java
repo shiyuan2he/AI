@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author heshiyuan
- * @author shiyuan2he
  * @description <p></p>
  * @path ai/com.hsy.ai.service.log.impl
  * @date 2017/9/17 16:42
@@ -24,6 +23,7 @@ public class TAiLogServiceImpl implements ITAiLogService {
     TAiLogMapper tAiLogMapper ;
     @Override
     public int saveAiLog(TAiLog log) {
-        tAiLogMapper.insert(log) ;
+        return tAiLogMapper.insert(log) ;
     }
 }
+

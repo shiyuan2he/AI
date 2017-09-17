@@ -137,8 +137,9 @@ public class AiChatLogAspectJ {
                     log.setUserId(sessionBean.getId());
                 }
             }
+            log.setRequestSource(GlobalConstantsEnum.SYSTEM_SOURCE_CHAT.getCode());
             log.setRequestThreadId(Thread.currentThread().getName()+"-"+String.valueOf(Thread.currentThread().getId()));
-            log.setId(MathHelper.generateRandomOfLongByLength(18));
+            log.setId(String.valueOf(MathHelper.generateRandomOfLongByLength(20)));
             log.setRequestTime(new Date());
             log.setTiming(String.valueOf(timing));
             log.setRequestAction(aspectJLog.description());

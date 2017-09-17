@@ -22,8 +22,14 @@ public enum GlobalConstantsEnum {
     DB_UPDATE_RESULT_ERROR("NB2002", "db update error"),
 
     // 用户相关异常
-    INVALID_USER("1001001", "无效用户");
+    INVALID_USER("1001001", "无效用户"),
 
+    // 系统配置
+    SYSTEM_SOURCE_CHAT("ai-chat","智能聊天系统"),
+    SYSTEM_SOURCE_IMAGE("ai-image","智能图像识别系统"),
+    SYSTEM_SOURCE_VOICE("ai-voice","智能语音识别系统"),
+
+    ;
     private String code ;
     private String msg ;
 

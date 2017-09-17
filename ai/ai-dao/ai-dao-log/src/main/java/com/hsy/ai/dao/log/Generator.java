@@ -17,10 +17,10 @@ import java.util.Map;
 public class Generator {
 
 	// 根据命名规范，只修改此常量值即可
-	private static String MODULE = "ai-chat";
+	private static String MODULE = "ai-dao";
 	private static String DATABASE = "ai";
 	private static String TABLE_PREFIX = "t_ai";
-	private static String PACKAGE_NAME = "com.hsy.ai.chat";
+	private static String PACKAGE_NAME = "com.hsy.ai";
 	private static String JDBC_DRIVER = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.driver");
 	private static String JDBC_URL = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.url");
 	private static String JDBC_USERNAME = PropertiesFileHelper.getInstance("generator").get("generator.jdbc.username");

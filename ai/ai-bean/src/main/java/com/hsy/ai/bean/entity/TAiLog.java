@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TAiLog implements Serializable {
-    private Long id;
+    private String id;
 
     private String requestUrl;
 
-    private Long userId;
+    private String userId;
 
     private String requestAction;
 
@@ -34,11 +34,11 @@ public class TAiLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,11 +50,11 @@ public class TAiLog implements Serializable {
         this.requestUrl = requestUrl;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
