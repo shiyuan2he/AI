@@ -85,32 +85,145 @@ public class MybatisGeneratorUtil {
         initParam(module) ;
 
         _logger.info("========== 开始生成generatorConfig.xml文件 ==========");
-        _logger.info("generatorConfig.xml存放路径："+generatorConfig_xml);
         generateMybatisConfigXml(database,table_prefix,jdbc_driver,jdbc_url,jdbc_username,jdbc_password,package_name,last_insert_id_tables) ;
         _logger.info("========== 结束生成generatorConfig.xml文件 ==========");
 
         _logger.info("========== 开始运行MybatisGenerator，生成mapper接口==========");
         generateModelAndMapperAndDaoInterface() ;
         _logger.info("========== 结束运行MybatisGenerator ==========");
-
-        //_logger.info("========== 开始生成Service ==========");
-        //generateServiceInterface(module,package_name) ;
-
-        //_logger.info("========== 结束生成Service ==========");
-
-        /*System.out.println("========== 开始生成Controller ==========");
-        System.out.println("========== 结束生成Controller ==========");*/
     }
 
+
+
+    private static void generateResource(String vm,String filePath, String package_name, String model, String ctime) throws Exception {
+        VelocityContext context = new VelocityContext();
+        context.put("package_name", package_name);
+        context.put("model", model);
+        context.put("ctime", ctime);
+        VelocityUtil.generate(vm, filePath, context);
+        _logger.info(filePath);
+    }
+
+    private static void generateModelAndMapperAndDaoInterface() throws IOException, XMLParserException, InvalidConfigurationException, SQLException, InterruptedException {
+        List<String> warnings = new ArrayList<>();
+        File configFile = new File(generatorConfig_xml);
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(configFile);
+        DefaultShellCallback callback = new DefaultShellCallback(true);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+        myBatisGenerator.generate(null);
+        for (String warning : warnings) {
+            _logger.info(warning);
+        }
+    }
+
+    private static void initParam(String module) {
+
+        basePath = MybatisGeneratorUtil.class.getResource("/").getPath()
+                .replace("/target/classes/", "")
+                .replace(module, "")
+                .replace(module.substring(0,6)+"/","")
+        ;
+        _logger.info("basePath地址："+basePath);
+        daoProject = basePath + module.substring(0,6)+"/" + module;
+
+        beanProject = basePath + "ai-bean";
+        _logger.info("在"+beanProject+"中生成实体文件");
+
+        generatorConfig_xml = MybatisGeneratorUtil.class.getResource("/")
+                .getPath()
+                .replace("/target/classes/", "") +
+                "/src/main/resources/generatorConfig.xml";
+        _logger.info("在"+generatorConfig_xml+"生成generatorConfig.xml文件");
+    }
+
+    /**
+     * @description <p>生成generatorConfig_xml配置文件</p>
+     * @param
+     * @author heshiyuan
+     * @date 18/09/2017 1:42 PM
+     * @email shiyuan4work@sina.com
+     * @github https://github.com/shiyuan2he.git
+     * Copyright (c) 2016 shiyuan4work@sina.com All rights reserved
+     */
+    private static void generateMybatisConfigXml(String database, String table_prefix, String jdbc_driver,
+                                                 String jdbc_url, String jdbc_username, String jdbc_password,
+                                                 String package_name,Map<String, String> last_insert_id_tables) {
+        try {
+            //查询将要生成的表,并将其放到全局变量tables
+            selectTables(database,table_prefix,jdbc_driver,jdbc_url,jdbc_username,jdbc_password);
+            VelocityContext context = new VelocityContext();
+
+            context.put("tables", tables);
+            // 生成实体的位置
+            context.put("beanProject", beanProject);
+            context.put("entity_package", "com.hsy.ai.bean.entity");
+            context.put("daoProject", daoProject);
+            context.put("mapperJava_package", package_name+".dao");
+            context.put("mapperXml_package", ".mapper");
+
+            context.put("generator_jdbc_password", AESHelper.AESDecode(jdbc_password));
+            context.put("last_insert_id_tables", last_insert_id_tables);
+            VelocityUtil.generate(generatorConfig_vm, generatorConfig_xml, context);
+            // 删除旧代码
+            // 删除实体
+            deleteDir(new File("com.hsy.ai.bean.entity"));
+            // 删除配置文件
+            deleteDir(new File(daoProject + "/src/main/resources/mapper"));
+            // 删除mapper java文件
+            deleteDir(new File(daoProject + "/src/main/java/" + package_name.replaceAll("\\.", "/") + "/dao"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * @description <p>查询出来需要generate代码的表</p>
+     * @param
+     * @author heshiyuan
+     * @date 18/09/2017 1:41 PM
+     * @email shiyuan4work@sina.com
+     * @github https://github.com/shiyuan2he.git
+     * Copyright (c) 2016 shiyuan4work@sina.com All rights reserved
+     */
+    private static void selectTables(String database, String table_prefix, String jdbc_driver,
+                                               String jdbc_url, String jdbc_username, String jdbc_password) throws SQLException {
+        String sql = "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = '" +
+                    database + "' AND table_name LIKE '" + table_prefix + "%';";
+        _logger.info("sql:"+sql);
+
+        Map<String, Object> table;
+        // 查询定制前缀项目的所有表
+        JdbcUtil jdbcUtil = new JdbcUtil(jdbc_driver, jdbc_url, jdbc_username, AESHelper.AESDecode(jdbc_password));
+        List<Map> result = jdbcUtil.selectByParams(sql, null);
+        for (Map map : result) {
+            _logger.info(map.get("TABLE_NAME").toString());
+            table = new HashMap<>();
+            table.put("table_name", map.get("TABLE_NAME"));
+            table.put("model_name", StringHelper.lineToHump(map.get("TABLE_NAME").toString()));
+            tables.add(table);
+        }
+        jdbcUtil.release();
+    }
+
+    // 递归删除非空文件夹
+    public static void deleteDir(File dir) {
+        if (dir.isDirectory()) {
+            File[] files = dir.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                deleteDir(files[i]);
+            }
+        }
+        dir.delete();
+    }
     private static void generateServiceInterface(String module, String package_name) throws Exception {
         String ctime = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
         String servicePath = basePath + module + "/" + module + "-rpc-api" +
-                            "/src/main/java/" + package_name.replaceAll("\\.", "/") +
-                            "/rpc/api";
+                "/src/main/java/" + package_name.replaceAll("\\.", "/") +
+                "/rpc/api";
         _logger.info("service生成地址"+servicePath);
         String serviceImplPath = basePath + module + "/" + module + "-rpc-service" +
-                            "/src/main/java/" + package_name.replaceAll("\\.", "/") +
-                            "/rpc/service/impl";
+                "/src/main/java/" + package_name.replaceAll("\\.", "/") +
+                "/rpc/service/impl";
         _logger.info("serviceImpl生成地址"+servicePath);
         //deleteDir(new File(servicePath));
         //deleteDir(new File(serviceImplPath));
@@ -141,115 +254,5 @@ public class MybatisGeneratorUtil {
                 _logger.info(serviceImpl);
             }
         }
-    }
-
-    private static void generateResource(String vm,String filePath, String package_name, String model, String ctime) throws Exception {
-        VelocityContext context = new VelocityContext();
-        context.put("package_name", package_name);
-        context.put("model", model);
-        context.put("ctime", ctime);
-        VelocityUtil.generate(vm, filePath, context);
-        _logger.info(filePath);
-    }
-
-    private static void generateModelAndMapperAndDaoInterface() throws IOException, XMLParserException, InvalidConfigurationException, SQLException, InterruptedException {
-        List<String> warnings = new ArrayList<>();
-        File configFile = new File(generatorConfig_xml);
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(configFile);
-        DefaultShellCallback callback = new DefaultShellCallback(true);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-        myBatisGenerator.generate(null);
-        for (String warning : warnings) {
-            _logger.info(warning);
-        }
-    }
-
-    private static void initParam(String module) {
-        // paac-urms/paac-urms-dao
-        daoProject = module + "/" + module + "-dao";
-        _logger.info("在"+daoProject+"中生成mapper接口文件和xml文件");
-
-        //  /Users/heshiyuan/data/devTools/repo/git/paac/
-        basePath = MybatisGeneratorUtil.class.getResource("/").getPath()
-                .replace("/target/classes/", "")
-                .replace(daoProject, "");
-        _logger.info("basePath地址："+basePath);
-
-        // /Users/heshiyuan/data/devTools/repo/git/paac/paac-urms/paac-urms-dao
-        daoProject = basePath + daoProject;
-
-        //  /Users/heshiyuan/data/devTools/repo/git/paac/paac-urms/paac-urms-rpc-service
-        rpcServicePorject = basePath + module + "/" + module + "-rpc-service";
-        _logger.info("在"+rpcServicePorject+"中生成接口文件");
-
-        //  /Users/heshiyuan/data/devTools/repo/git/paac/paac-urms/paac-urms-base
-        beanProject = basePath + "ai-bean";
-        _logger.info("在"+beanProject+"中生成实体文件");
-
-        generatorConfig_xml = MybatisGeneratorUtil.class.getResource("/")
-                .getPath()
-                .replace("/target/classes/", "") +
-                "/src/main/resources/generatorConfig.xml";
-        _logger.info("在"+generatorConfig_xml+"生成generatorConfig.xml文件");
-    }
-
-    private static void generateMybatisConfigXml(String database, String table_prefix, String jdbc_driver,
-                                                 String jdbc_url, String jdbc_username, String jdbc_password,
-                                                 String package_name,Map<String, String> last_insert_id_tables) {
-        try {
-            //查询将要生成的表,并将其放到全局变量tables
-            selectTables(database,table_prefix,jdbc_driver,jdbc_url,jdbc_username,jdbc_password);
-            VelocityContext context = new VelocityContext();
-
-            context.put("tables", tables);
-            // 生成实体的位置
-            context.put("beanProject", beanProject);
-            context.put("daoProject", daoProject);
-            context.put("rpcServicePorject", rpcServicePorject);
-            context.put("generator_javaModelGenerator_targetPackage", "com.hsy.ai.bean.entity");
-            context.put("generator_sqlMapperGenerator_targetPackage", package_name + ".dao.mapper");
-            context.put("generator_javaClientGenerator_targetPackage", package_name + ".dao");
-            context.put("generator_jdbc_password", AESHelper.AESDecode(jdbc_password));
-            context.put("last_insert_id_tables", last_insert_id_tables);
-            VelocityUtil.generate(generatorConfig_vm, generatorConfig_xml, context);
-            // 删除旧代码
-            deleteDir(new File("com.hsy.ai.bean.entity"));
-            deleteDir(new File(daoProject + "/src/main/java/" + package_name.replaceAll("\\.", "/") + "/dao/mapper"));
-            deleteDir(new File(daoProject + "/src/main/java/" + package_name.replaceAll("\\.", "/") + "/dao"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void selectTables(String database, String table_prefix, String jdbc_driver,
-                                               String jdbc_url, String jdbc_username, String jdbc_password) throws SQLException {
-        String sql = "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = '" +
-                    database + "' AND table_name LIKE '" + table_prefix + "_%';";
-        _logger.info("sql:"+sql);
-
-        Map<String, Object> table;
-        // 查询定制前缀项目的所有表
-        JdbcUtil jdbcUtil = new JdbcUtil(jdbc_driver, jdbc_url, jdbc_username, AESHelper.AESDecode(jdbc_password));
-        List<Map> result = jdbcUtil.selectByParams(sql, null);
-        for (Map map : result) {
-            _logger.info(map.get("TABLE_NAME").toString());
-            table = new HashMap<>();
-            table.put("table_name", map.get("TABLE_NAME"));
-            table.put("model_name", StringHelper.lineToHump(ObjectUtils.toString(map.get("TABLE_NAME"))));
-            tables.add(table);
-        }
-        jdbcUtil.release();
-    }
-
-    // 递归删除非空文件夹
-    public static void deleteDir(File dir) {
-        if (dir.isDirectory()) {
-            File[] files = dir.listFiles();
-            for (int i = 0; i < files.length; i++) {
-                deleteDir(files[i]);
-            }
-        }
-        dir.delete();
     }
 }

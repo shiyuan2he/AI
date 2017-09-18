@@ -128,12 +128,12 @@
             </dependency>
             <dependency>
                 <groupId>com.hsy.ai</groupId>
-                <artifactId>ai-dao-log</artifactId>
+                <artifactId>ai-dao-common</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>
                 <groupId>com.hsy.ai</groupId>
-                <artifactId>ai-service-log</artifactId>
+                <artifactId>ai-service-common</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>
@@ -146,12 +146,6 @@
                 <artifactId>ai-resource</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
-            <dependency>
-                <groupId>jstl</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${version.jstl}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
     <build>

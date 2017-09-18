@@ -12,7 +12,7 @@
     <artifactId>ai-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>ai-service-log</module>
+        <module>ai-service-common</module>
     </modules>
 
 

@@ -14,7 +14,7 @@
     <!-- 声明使用注解的风格 -->
     <context:annotation-config/>
     <!--扫描web相关的controller-->
-    <context:component-scan base-package="com.hsy.ai"/>
+    <context:component-scan base-package="com.hsy.ai.web.chat.controller"/>
     <!--简化配置:
        1、自动注册DefaultAnnotationHandlerMapping,AnnotationMethodHandlerAdapter
        2、提供一系列:数据绑定,数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持
@@ -31,14 +31,13 @@
     <mvc:default-servlet-handler/>
     <import resource="spring-dataSource-ai.xml"/>
     <import resource="spring-resource.xml"/>
-    <import resource="spring-thread.xml"/>
     <import resource="spring-dao.xml"/>
+    <import resource="spring-service.xml"/>
+    <import resource="spring-aop.xml"/>
+    <import resource="spring-thread.xml"/>
     <!--
     <import resource="spring-redis.xml"/>
-    <import resource="spring-service.xml"/>
     <import resource="spring-quartz.xml"/>
-    <import resource="spring-aop.xml"/>
-
     <import resource="spring-tx.xml"/>-->
 	<!--全局异常捕捉 -->
 	<bean class="com.hsy.ai.web.chat.exception.GlobalException"/>

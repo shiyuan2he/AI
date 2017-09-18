@@ -12,7 +12,7 @@
     <artifactId>ai-dao</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>ai-dao-log</module>
+        <module>ai-dao-common</module>
         <module>ai-dao-chat</module>
     </modules>
 

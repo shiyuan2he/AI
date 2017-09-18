@@ -1,4 +1,4 @@
-package com.hsy.ai.service.log;
+package com.hsy.ai.service.common;
 
 import com.hsy.ai.bean.entity.TAiLog;
 

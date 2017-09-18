@@ -4,32 +4,102 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TAiLog implements Serializable {
+    /**
+     * ä¸»é”®id
+     *
+     * @mbg.generated
+     */
     private String id;
 
+    /**
+     * è¯·æ±‚åœ°å€
+     *
+     * @mbg.generated
+     */
     private String requestUrl;
 
+    /**
+     * ç”¨æˆ·id
+     *
+     * @mbg.generated
+     */
     private String userId;
 
+    /**
+     * è¯·æ±‚åŠ¨ä½œ
+     *
+     * @mbg.generated
+     */
     private String requestAction;
 
+    /**
+     * è¯·æ±‚è€—æ—¶
+     *
+     * @mbg.generated
+     */
     private String timing;
 
+    /**
+     * è¯·æ±‚æ–¹æ³•ç±»åž‹ï¼Œget,post
+     *
+     * @mbg.generated
+     */
     private String requestMethodType;
 
+    /**
+     * è¯·æ±‚å‚æ•°
+     *
+     * @mbg.generated
+     */
     private String requestParam;
 
+    /**
+     * ç”¨æˆ·æ ‡è¯†
+     *
+     * @mbg.generated
+     */
     private String userRemark;
 
+    /**
+     * è¯·æ±‚ip
+     *
+     * @mbg.generated
+     */
     private String requestIp;
 
+    /**
+     * è¯·æ±‚åœ°å€
+     *
+     * @mbg.generated
+     */
     private String requestAddress;
 
+    /**
+     * è¯·æ±‚æ—¶é—´
+     *
+     * @mbg.generated
+     */
     private Date requestTime;
 
+    /**
+     * è¯·æ±‚å“åº”
+     *
+     * @mbg.generated
+     */
     private String requestResponse;
 
+    /**
+     * è¯·æ±‚çº¿ç¨‹id
+     *
+     * @mbg.generated
+     */
     private String requestThreadId;
 
+    /**
+     * è¯·æ±‚æ¥æº
+     *
+     * @mbg.generated
+     */
     private String requestSource;
 
     private static final long serialVersionUID = 1L;

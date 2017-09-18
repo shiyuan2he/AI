@@ -1,8 +1,8 @@
-package com.hsy.ai.service.log.impl;
+package com.hsy.ai.service.common.impl;
 
 import com.hsy.ai.bean.entity.TAiLog;
-import com.hsy.ai.dao.log.TAiLogMapper;
-import com.hsy.ai.service.log.ITAiLogService;
+import com.hsy.ai.dao.common.dao.TAiLogMapper;
+import com.hsy.ai.service.common.ITAiLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +19,12 @@ import org.springframework.stereotype.Service;
 @Service("iTAiLogService")
 public class TAiLogServiceImpl implements ITAiLogService {
 
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     TAiLogMapper tAiLogMapper ;
     @Override
     public int saveAiLog(TAiLog log) {
-        return tAiLogMapper.insert(log) ;
+        return tAiLogMapper.saveLog(log) ;
     }
 }
 

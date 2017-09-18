@@ -14,33 +14,35 @@
 
         <!-- 为生成的Java模型创建一个toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+        <!-- Java模型生成equals和hashcode方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
 
         <!-- 为生成的Java模型类添加序列化接口，并生成serialVersionUID字段 -->
-        <plugin type="com.hsy.java.util.plugin.SerializablePlugin">
+        <plugin type="com.hsy.java.util.plugins.SerializablePlugin">
             <property name="suppressJavaInterface" value="false"/>
         </plugin>
 
         <!-- 生成一个新的selectByExample方法，这个方法可以接收offset和limit参数，主要用来实现分页，只支持mysql(已使用pagehelper代替) -->
-        <!--<plugin type="com.hsy.paac.base.plugin.PaginationPlugin"></plugin>-->
+        <plugin type="com.hsy.java.util.plugins.PaginationPlugin"></plugin>
 
         <!-- 生成在XML中的<cache>元素 -->
+        <!--
         <plugin type="org.mybatis.generator.plugins.CachePlugin">
+        -->
             <!-- 使用ehcache -->
-            <property name="cache_type" value="org.mybatis.caches.ehcache.LoggingEhcache" />
+            <!--  <property name="cache_type" value="org.mybatis.caches.ehcache.LoggingEhcache" /> -->
             <!-- 内置cache配置 -->
             <!--
             <property name="cache_eviction" value="LRU"/>
             <property name="cache_flushInterval" value="60000"/>
             <property name="cache_readOnly" value="true"/>
             <property name="cache_size" value="1024"/>
-            -->
         </plugin>
+        -->
 
-        <!-- Java模型生成equals和hashcode方法 -->
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
 
         <!-- 生成的代码去掉注释 -->
-        <commentGenerator type="com.hsy.java.util.plugin.CommentGenerator">
+        <commentGenerator type="com.hsy.java.util.plugins.CommentGenerator">
             <property name="suppressAllComments" value="true" />
             <property name="suppressDate" value="true"/>
         </commentGenerator>
@@ -52,13 +54,13 @@
                         password="${generator_jdbc_password}" />
 
         <!-- model生成 -->
-        <javaModelGenerator targetPackage="${generator_javaModelGenerator_targetPackage}" targetProject="${beanProject}/src/main/java" />
+        <javaModelGenerator targetPackage="${entity_package}" targetProject="${beanProject}/src/main/java" />
 
         <!-- MapperXML生成 -->
-        <sqlMapGenerator targetPackage="${generator_sqlMapperGenerator_targetPackage}" targetProject="${daoProject}/src/main/java" />
+        <sqlMapGenerator targetPackage="${mapperXml_package}" targetProject="${daoProject}/src/main/resources" />
 
         <!-- Mapper接口生成 -->
-        <javaClientGenerator targetPackage="${generator_javaClientGenerator_targetPackage}" targetProject="${daoProject}/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="${mapperJava_package}" targetProject="${daoProject}/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
         #foreach($table in $tables)

@@ -2,7 +2,7 @@ package com.hsy.ai.web.chat.thread;
 
 import com.hsy.ai.base.enums.GlobalConstantsEnum;
 import com.hsy.ai.bean.entity.TAiLog;
-import com.hsy.ai.service.log.ITAiLogService;
+import com.hsy.ai.service.common.ITAiLogService;
 import com.hsy.ai.web.chat.exception.BusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author heshiyuan
  * @description <p></p>
- * @path framework/com.hsy.thread
+ * @path ai-web-chat/com.hsy.thread
  * @date 23/08/2017 5:38 PM
  * @github http://github.com/shiyuan2he
  * @email shiyuan4work@sina.com

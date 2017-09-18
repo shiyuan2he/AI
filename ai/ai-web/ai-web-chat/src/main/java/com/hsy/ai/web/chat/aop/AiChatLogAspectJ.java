@@ -5,11 +5,11 @@ import com.hsy.ai.base.annotation.AspectJLogAnnotation;
 import com.hsy.ai.base.enums.GlobalConstantsEnum;
 import com.hsy.ai.bean.entity.TAiLog;
 import com.hsy.ai.bean.javabean.SessionBean;
-import com.hsy.ai.service.log.ITAiLogService;
+import com.hsy.ai.service.common.ITAiLogService;
 import com.hsy.ai.web.chat.thread.LogThread;
 import com.hsy.ai.web.chat.thread.pool.FixedThreadPool;
 import com.hsy.ai.web.chat.utils.ConstantsUtils;
-import com.hsy.java.base.utils.MathHelper;
+import com.hsy.java.base.string.StringHelper;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -20,7 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -139,7 +138,7 @@ public class AiChatLogAspectJ {
             }
             log.setRequestSource(GlobalConstantsEnum.SYSTEM_SOURCE_CHAT.getCode());
             log.setRequestThreadId(Thread.currentThread().getName()+"-"+String.valueOf(Thread.currentThread().getId()));
-            log.setId(String.valueOf(MathHelper.generateRandomOfLongByLength(20)));
+            log.setId(StringHelper.generateRandomOfStringByLength(20));
             log.setRequestTime(new Date());
             log.setTiming(String.valueOf(timing));
             log.setRequestAction(aspectJLog.description());
