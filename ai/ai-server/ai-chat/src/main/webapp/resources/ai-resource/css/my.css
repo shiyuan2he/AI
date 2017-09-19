@@ -1,0 +1,376 @@
+/*登录*/
+.login-content{
+    background:#fff;
+    padding:0.2rem 0.26rem;
+    margin-top:0.2rem;
+}
+.login-text{
+    width: 6.38rem;
+    height: 0.81rem;
+    line-height:0.81rem;
+    border:0;
+    border-bottom: 0.013rem solid #eee;
+    border-radius:0;
+    background:#fff;
+    font-size:0.3rem;
+}
+.login-pwd{
+    width:4.42rem;
+    border:0;
+}
+.login-submit{
+    font-size:0.3rem;
+}
+.login-yzm{
+    width:1.8rem;
+    height:0.6rem;
+    font-size:0.24rem;
+    line-height:0.6rem;
+    border:1px solid #bbb;
+    border-radius:0.13rem;
+}
+/*.btndiv{
+    text-align:center;
+    margin-top: 0.9rem;
+}
+.submit-btn{
+    width:6.78rem;
+    height:0.975rem;
+    font-size:0.36rem;
+    line-height:0.975rem;
+    background:#ff6b2a;
+    color:#fff;
+    border-radius:0.13rem;
+}*/
+.login-phoneimg{
+    width:0.34rem;
+    height:0.34rem;
+    vertical-align: middle;
+    margin:0 0.075rem;
+}
+/*找回密码2*/
+.forgot-formdiv{
+    text-align:center;
+    margin-top:0.32rem;
+}
+.forgot-text{
+    width:6.48rem;
+    height:0.9rem;
+    line-height:0.9rem;
+    border:0.013rem solid #eee;
+    background:#fff;
+    font-size:0.3rem;
+    padding-left:0.3rem;
+}
+.card-money{
+    display:inline-block;
+    margin:0 0.2rem;
+    font-size:0.3rem;
+}
+.card-moneycontent{
+    padding-left:0.2rem;
+    width:5.1rem;
+    font-size:0.3rem;
+}
+/*会员权益*/
+.member-top{
+    background:url(../images/member-bg.jpg) no-repeat;
+    background-size:7.5rem 1.88rem;
+    height:0.9rem;
+    padding:0.56rem 0.44em 0.42rem 0.44rem;
+    color:#fff;
+    font-size:0.3rem;
+}
+.member-time{
+    font-size:0.24rem;
+    padding-top:0.15rem
+}
+.member-classify{
+    width:7.5rem;
+    height:0.9rem;
+    line-height:0.9rem;
+    margin-top:0.2rem;
+    background:#fff;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.member-classify p{
+    flex:1;
+    text-align:center;
+}
+.member-classify p span{
+    display:inline-block;
+    height:0.87rem;
+    line-height:0.87rem;
+}
+.member-classify p span.active{
+    border-bottom:0.04rem solid #ff6b2a;
+}
+.member-classifycontent{
+    width:7.5rem;
+    height:2.48rem;
+    background:#fff;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.member-classifycontent div{
+    border-right:0.026rem solid #eee;
+    border-bottom:0.026rem solid #eee;
+    flex:1;
+    text-align:center;
+}
+.member-classifycontent div:last-child{
+    border-right:0;
+}
+.member-description{
+    margin-top:0.38rem;
+    font-size:0.3rem;
+}
+.member-description1{
+    margin-top: 0.15rem;
+    font-size:0.2rem;
+    padding:0 0.15rem;
+}
+
+/*订单详情*/
+.details-alert{
+    text-align:center;
+    background:#ffe9de;
+    width:7.5rem;
+    padding:0.3rem 0;
+    color:#ff6b2a;
+    font-size:0.3rem;
+}
+.details-showcontent{
+    padding:0.29rem 0.25rem;
+    background:#fff;
+    height:2.06rem;
+}
+.details-img{
+    width:1.52rem;
+    height:2.04rem;
+    float:left;
+}
+.details-rightcontent{
+    margin-left:0.34rem;
+    width:5.08rem;
+    float:left;
+}
+.details-showtitle{
+    width:5.08rem;
+    height:0.7rem;
+    font-size:0.3rem;
+}
+.details-time{
+    margin-top:0.3rem;
+    font-size:0.24rem;
+    color:#666;
+}
+.details-location{
+    font-size:0.24rem;
+    margin-top:0.05rem;
+    color:#666;
+}
+.details-timeimg{
+    width:0.33rem;
+    height:0.33rem;
+    margin-right:0.22rem;
+}
+.details-location span{
+    position:relative;
+    top:-0.04rem;
+}
+.details-address{
+    margin-top:0.2rem;
+    background:#fff;
+    padding:0 0.26rem 0 0.26rem;
+}
+.details-addressbottom{
+    padding-bottom:0.2rem;
+}
+.details-addresstitle{
+    font-size:0.3rem;
+    padding:0.2rem 0;
+    border-bottom:0.013rem solid #eee;
+}
+.details-addresscontent{
+    margin-top:0.25rem;
+    color:#666;
+    font-size:0.26rem;
+    overflow:hidden;
+}
+.details-addresscontent dd{
+    margin-right:0.14rem;
+    float:left;
+}
+.details-seat{
+    padding:0.04rem 0 0.24rem 0;
+    border-bottom:0.013rem solid #eee;
+}
+.details-seat span{
+    display:inline-block;
+    padding:0 0.15rem;
+    height:0.58rem;
+    line-height:0.58rem;
+    background:#f6f6f6;
+    border-radius:5px;
+    margin:0.18rem 0.12rem 0 0;
+    font-size:0.24rem;
+}
+.details-total{
+    overflow:hidden;
+    padding:0.3rem 0;
+    font-size:0.26rem;
+    border-bottom:0.013rem solid #eee;
+}
+.details-totalnumber{
+    margin-left:0.24rem;
+}
+.details-pocket{
+    border:0;
+}
+.details-explicit{
+    padding:0.3rem 0;
+    font-size:0.26rem;
+}
+.detais-btn{
+    float:right;
+    padding:0.2rem 0;
+}
+.detais-btn a{
+    display:inline-block;
+    width:1.35rem;
+    height:0.6rem;
+    line-height:0.6rem;
+    text-align:center;
+    color:#ff6b2a;
+    border:0.01rem solid #ff6b2a;
+    border-radius:0.05rem;
+    margin-left:0.2rem;
+    font-size:0.26rem;
+}
+.details-codecontent{
+    text-align:center;
+}
+.details-code{
+    width:2.82rem;
+    height:2.81rem;
+    margin:0.34rem 0 0.4rem 0;
+}
+.details-codetitle{
+    text-align:center;
+    background:#eee;
+    padding:0.25rem 0;
+}
+.details-codetitle p{
+    font-size:0.26rem;
+    color:#a1a1a1;
+}
+.details-codename{
+    margin-top:0.2rem;
+}
+.details-codephone{
+    margin-left:0.22rem;
+}
+/*总订单*/
+.details-content{
+    padding:0.3rem 0.24rem 0.1rem 0.24rem;
+    background:#fff;
+    margin-bottom:0.2rem;
+}
+.details-content dt{
+    float:left;
+    font-size:0.22rem;
+    color:#666;
+}
+.details-content dd{
+    float:right;
+    font-size:0.26rem;
+    color:#ff6b2a;
+}
+.details-messages{
+    margin-bottom:0.18rem;
+}
+.details-totalcontent{
+    padding:0.2rem 0.18rem;
+    background:#eee;
+    height:2.06rem;
+    margin-top:0.33rem;
+    margin-bottom:0.2rem;
+}
+.details-totalcontent .details-rightcontent{
+    width:4.7rem;
+}
+.details-totalcontent .details-showtitle{
+    width:4.7rem;
+}
+.details-surplustime{
+    margin-top:0.15rem;
+}
+.details-totalbtn{
+    padding:0;
+}
+/*一卡通未开通*/
+.card-open{
+    background:url("../images/card-openimg.png") no-repeat;
+    background-size:7.5rem 3.4rem;
+    width:7.5rem;
+    height:4.42rem;
+    text-align:center;
+    position:relative;
+}
+.card-img{
+    width:6.6rem;
+    height:3.71rem;
+    margin-top:0.64rem;
+}
+.card-alert{
+    margin-top:0.52rem;
+    background:#fff;
+    padding:0.52rem 0.24rem 0.46rem 0.24rem;
+}
+.card-alerttitle{
+    font-size:0.3rem;
+    color:#666;
+}
+.card-alertcontent{
+    font-size:0.24rem;
+    color:#666;
+    margin-top:0.42rem;
+}
+.card-openbtn{
+    position:absolute;
+    bottom:0.64rem;
+    left:2.44rem;
+    text-align:center;
+    width:2.72rem;
+    height:0.87rem;
+    background:url(../images/card-bgimg.png) no-repeat;
+    background-size:2.72rem 0.87rem;
+    line-height:0.87rem;
+}
+.card-openbtn a{
+    color:#f9ed89;
+    font-size:0.34rem;
+}
+/*开通一卡通*/
+.card-getpassword{
+    font-size:0.24rem;
+    text-align:center;
+    margin-top:0.6rem;
+}
+.card-opencontent{
+    position:absolute;
+    bottom:0.74rem;
+    left:0.44rem;
+    width:5.2rem;
+    padding:0 0.7rem;
+    overflow:hidden;
+    font-size:0.3rem;
+}

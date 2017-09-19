@@ -1,0 +1,335 @@
+.zqinput{
+	border: #e5e5e5 0.01rem solid;
+	width: 6.66rem;
+	height: 0.46rem;
+	line-height: 0.46rem;
+	padding: 0.15rem;
+	margin-bottom: 0.15rem;
+	font-size: 0.24rem;
+	background: #FFFFFF;
+}
+
+.flow-dis-add{
+	line-height: 0.88rem;
+	background: #FFFFFF;
+/*	padding: 0 0.26rem;*/
+	background: #FFFFFF;
+	overflow: hidden;	
+}
+.flow-dis-add a{
+	display: block;
+}
+.flow-dis-add-dl{
+	display: block;
+	overflow: hidden;
+}
+.flow-dis-add-dl dt{
+	float: left;
+	color: #000000;
+}
+.flow-dis-add-dl dd{
+	float: right;
+	font-size: 0.26rem;
+    color: #666666;
+}
+.flow-dis-add-dl dd strong{
+	color: #ff6b2a;
+	font-weight: normal;
+}
+.flow-dis-add-dl span:nth-child(2){
+	margin-left: 0.15rem;
+}
+.flow-dis-hj{
+	/*height: 0.88rem;*/
+	line-height: 0.88rem;
+	background: #FFFFFF;
+	padding: 0 0.26rem;
+	margin-top: 0.2rem;
+	background: #FFFFFF;
+	overflow: hidden;	
+}
+.flow-dis-hj-dl{
+	display: block;
+	overflow: hidden;
+}
+.flow-dis-hj-dl dt{
+	float: left;
+	color: #000000;
+}
+.flow-dis-hj-dl dd{
+	float: right;
+	font-size: 0.26rem;
+    color: #666666;
+}
+.flow-dis-hj-dl dd strong{
+	color: #ff6b2a;
+	font-weight: normal;
+}
+.flow-dis-hj-dl span:nth-child(2){
+	margin-left: 0.15rem;
+}
+.flow-dis-box{
+	position: relative;
+	padding: 0.34rem 0;
+}
+.flow-dis-box a{
+	display: inline-block;
+	border-radius: 0.03rem;
+	border: #e5e5e5 0.01rem solid;
+	width: 1.9rem;
+	height: 0.61rem;
+	line-height: 0.63rem;
+	text-align: center;
+	font-size: 0.26rem;
+	color: #666666;
+	margin-right: 0.26rem;
+}
+.flow-dis-box .a-hover{
+	border: 0;
+	height: 0.7rem;
+	color: #ff6b2a;
+	background: url(../images/icon_01.png) no-repeat;
+	background-size: 1.9rem 0.7rem;
+}
+.flow-dis-hj a{
+	display: block;
+}
+
+.tinja{
+	
+	display: inline-block;
+}
+.arrow{
+	float: right;
+	display: inline-block;
+	margin-top: 0.3rem;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+.arrow img{
+	width: 0.3rem;
+	height: 0.3rem;
+}
+.flow-shxx{
+	display: block;
+	overflow: hidden;
+	line-height: 0.52rem;
+	font-size: 0.26rem;
+	color: #666666;
+	margin-bottom: 0.23rem;
+}
+.flow-shxx li span:nth-child(2){
+	margin-left: 0.23rem;
+}
+.flow-aud{
+	position: relative;
+	overflow: hidden;
+	background: #FFFFFF;
+	padding: 0.26rem 0;
+}
+.flow-aud dl{
+	display: block;
+	overflow: hidden;
+	padding: 0 .26rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+.flow-aud dl dt{
+	float: left;
+	width: 1.5rem;
+	color: #666666;
+	text-align: right;
+}
+.flow-aud dl dd{
+	float: left;
+}
+.flow-aud-input{
+	border: #e5e5e5 1px solid;
+	width: 1.5rem;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	padding: 0.15rem;
+	font-size: 0.24rem;
+	background: #FFFFFF;
+}
+.flow-aud-input-a{
+	border: #e5e5e5 1px solid;
+	width: 2.93rem;
+	height: 0.46rem;
+	line-height: 0.46rem;
+	padding: 0.15rem;
+	font-size: 0.24rem;
+	background: #FFFFFF;
+	margin-left: 0.23rem;
+}
+.flow-aud .fl-aubut{
+	position: absolute;
+	top: 0.45rem;
+	right: 0.45rem;
+	font-size: 0.24rem;
+	color: #ff6b2a;
+	border: #ff6b2a 0.01rem solid;
+	border-radius: 0.06rem;
+	padding: 0.12rem 0.15rem;
+	background: #ffffff;
+}
+.audience-btn{
+	position:fixed;
+	bottom:1.24rem;
+	left:0.36rem;
+}
+.details-seat{
+	padding:0.04rem 0 0.24rem 0;
+	border-bottom:0.013rem solid #eee;
+}
+.details-seat span{
+	display:inline-block;
+	padding:0 0.15rem;
+	height:0.58rem;
+	line-height:0.58rem;
+	background:#f6f6f6;
+	border-radius:5px;
+	margin:0.18rem 0.12rem 0 0;
+	font-size:0.24rem;
+}
+/*收货地址页面*/
+.good-address{
+	background:#fff;
+	padding:0 0.26rem 0.24rem 0.26rem;
+}
+.details-addresstitle{
+	font-size:0.3rem;
+	padding:0.2rem 0;
+	border-bottom:0.013rem solid #eee;
+}
+.good-addressdetails span{
+	display:inline-block;
+	padding:0 0.15rem;
+	height:0.58rem;
+	line-height:0.58rem;
+	background:#f6f6f6;
+	border-radius:5px;
+	margin:0.18rem 0.12rem 0 0;
+	font-size:0.24rem;
+}
+.good-newaddress{
+	background:#fff;
+	padding:0 0.24rem;
+}
+.good-newaddress p{
+	border-bottom:0.01rem solid #eee;
+}
+.good-newaddress span{
+	padding:0.28rem 0;
+	display:inline-block;
+	font-size:0.3rem;
+}
+.good-newaddress input{
+	font-size:0.26rem;
+	height:0.8rem;
+	width:5.5rem;
+}
+/*立即购买*/
+.buy-newtitle{
+	background:#fff;
+	padding:0.3rem 0;
+	text-align:center;
+	font-size:0.3rem;
+}
+.buy-paynumber{
+	background:#fff;
+	padding:0.34rem 0.24rem 0rem 0.24rem;
+	margin-top:0.2rem;
+	font-size:0.3rem;
+	height:5rem;
+	overflow-y:scroll;
+}
+.buy-paytitle{
+	margin-bottom:0.4rem;
+}
+.buy-paynumber span{
+	min-width:1.02rem;
+	padding:0 0.6rem;
+	height:0.8rem;
+	line-height:0.8rem;
+	text-align:center;
+	border:0.01rem solid #eee;
+	display:inline-block;
+	margin:0 0.08rem 0.2rem 0;
+	font-size:0.3rem;
+}
+.buy-number{
+	max-height:3.52rem;
+	width:7.5rem;
+	background:#fff;
+	position:fixed;
+	bottom:1.04rem;
+	overflow-y:auto;
+}
+.delete-img{
+	width:0.3rem;
+	height:0.32rem;
+	padding-top:0.3rem;
+}
+.buy-numberoption{
+	width:7.5rem;
+	height:0.87rem;
+	line-height:0.87rem;
+    border:0.01rem solid #eee;
+	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox; /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Chrome */
+	display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.buy-money{
+	-webkit-flex-grow:2;
+	-ms-flex-grow:2;
+	flex-grow:2;
+	text-align:center;
+	font-size:0.3rem;
+}
+.buy-moneydetails{
+	-webkit-flex-grow:3;
+	-ms-flex-grow:3;
+	flex-grow:3;
+	text-align:center;
+}
+.buy-moneydetails input{
+	border:0.01rem solid #eee;
+	width:0.54rem;
+	height:0.54rem;
+	line-height:0.54rem;
+}
+.buy-moneydetails .input-number{
+	width:1.42rem;
+	height:0.5rem;
+	border:0.01rem solid #eee;
+}
+.buy-delete{
+	-webkit-flex-grow:1;
+	-ms-flex-grow:1;
+	flex-grow:1;
+	text-align:center;
+}
+.show-hideimg{
+	width:0.33rem;
+	height:0.33rem;
+	margin:0.34rem 0.35rem 0.34rem 0;
+}
+.footer-a-box .buy-footer span{
+	font-size:0.3rem;
+	color:#000;
+}
+.total-margin{
+	margin-left:0.23rem;
+}
+.flow-option{
+	background:#fff;
+	padding:0 0.26rem;
+	display:none;
+}
+.buy-paynumber .spanselected {
+	border:0.01rem solid #ff6b2a;
+	color:#ff6b2a;
+}
