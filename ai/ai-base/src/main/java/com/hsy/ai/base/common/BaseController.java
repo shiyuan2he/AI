@@ -43,7 +43,7 @@ public class BaseController {
         /*if (exception instanceof InvalidSessionException) {
             return "/error.jsp";
         }*/
-        return "/error";
+        return "/error/404";
     }
 
     /**

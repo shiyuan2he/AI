@@ -131,7 +131,7 @@ public class AiChatLogAspectJ {
                 log.setRequestIp(request.getServerName());
                 log.setRequestUrl(request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getRequestURI());
                 log.setRequestParam(getRequestParamByArgs(args));
-                SessionBean sessionBean = (SessionBean) request.getSession().getAttribute(GlobalConstantsEnum.SESSION_KEY.getCode());
+                SessionBean sessionBean = (SessionBean) request.getSession().getAttribute(GlobalConstantsEnum.KEY_SESSION_USERINFO.getCode());
                 if(null!=sessionBean){
                     log.setUserId(sessionBean.getId());
                 }

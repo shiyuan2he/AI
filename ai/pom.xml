@@ -39,6 +39,7 @@
 
         <!--tool jar start-->
         <version.jackson>2.8.8</version.jackson>
+        <version.kaptcha>2.3</version.kaptcha>
         <!--tool jar end-->
 
         <!--plugin start-->
@@ -145,6 +146,16 @@
                 <groupId>com.hsy.ai</groupId>
                 <artifactId>ai-resource</artifactId>
                 <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.kaptcha</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>0.0.9</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

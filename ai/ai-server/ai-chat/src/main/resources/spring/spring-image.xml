@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+    ">
+    <!-- 验证码 -->
+    <!--<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        &lt;!&ndash; 是否有边框 默认为true 我们可以自己设置yes，no &ndash;&gt;
+                        <prop key="kaptcha.border">no</prop>
+                        &lt;!&ndash; 边框颜色 默认为Color.BLACK &ndash;&gt;
+                        <prop key="kaptcha.border.color">105,179,90</prop>
+                        <prop key="kaptcha.textproducer.font.color">red</prop>
+                        &lt;!&ndash; 验证码图片宽度 &ndash;&gt;
+                        <prop key="kaptcha.image.width">120</prop>
+                        <prop key="kaptcha.textproducer.font.size">30</prop>
+                        <prop key="kaptcha.textproducer.char.space">6</prop>
+                        &lt;!&ndash; 噪点 颜色 &ndash;&gt;
+                        <prop key="kaptcha.noise.color">71,71,70</prop>
+                        &lt;!&ndash;去除干扰线 &ndash;&gt;
+                        <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.DefaultNoise</prop>
+                        &lt;!&ndash;样式引擎 &ndash;&gt;
+                        <prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.WaterRipple</prop>
+                        &lt;!&ndash; 验证码图片高度 &ndash;&gt;
+                        <prop key="kaptcha.image.height">45</prop>
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.names">Arial, Courier</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>-->
+</beans>

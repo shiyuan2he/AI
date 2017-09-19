@@ -21,25 +21,19 @@
     <script src="<%=basePath%>/resources/ai-resource/js/rem.js"></script>
 </head>
 <body>
-<div class="login-content">
-    <form action="<%=basePath%>/sso/login.do" method="post" id="loginForm" onsubmit="return login.judgeLoginOrNot();">
-        <!-- 手机号登录 -->
-        <div class="login-formdiv">
-            <input type="hidden" id="hiddenInput" value = "0"/>
-            <img src="<%=basePath%>/resources/ai-resource/images/login-phone.png" alt="" class="login-phoneimg"/>
-            <input id="username" name="username" type="text" class="login-text" value="" placeholder="请输入登录手机号">
+<div style="width: 98%;height: 880px;padding:0">
+    <div>
+        <div style="width: 100%;height: 800px;">
+            <input style="width:100%;height:100%"/>
         </div>
-        <div class="login-formdiv">
-            <img src="<%=basePath%>/resources/ai-resource/images/login-yzm.png" alt="" class="login-phoneimg"/>
-            <input id="code" name="code" type="text" class="login-text login-pwd" value="" placeholder="请输入验证码">
-            <button id="getCode" class="login-yzm">获取验证码</button>
-        </div>
-    </form>
-</div>
-<div class="btndiv">
-    <a href="javascript:login.doLogin();" class="submit-btn">完成</a>
+    </div>
+    <div class="chatinfo">
+        <img src="<%=basePath%>/resources/ai-resource/images/login-yzm.png" alt="" class="login-phoneimg"/>
+        <input type="text" id="content" style="width: 4.85rem;" class="login-text login-pwd" value="" placeholder="请输入内容">
+        <button class="login-yzm" onclick="javascript:chat.doChat();">发送</button>
+    </div>
 </div>
 <script>var base = '<%=basePath%>';</script>
-<script src="<%=basePath%>/resources/ai-resource/js/login.js"></script>
+<script src="<%=basePath%>/resources/ai-resource/js/chat.js"></script>
 </body>
 </html>

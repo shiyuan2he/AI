@@ -21,10 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController extends BaseController {
     @AspectJLogAnnotation(description = "访问首页",saveToDb = true)
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public ModelAndView index(){
-        ModelAndView modelAndView = new ModelAndView() ;
-        modelAndView.setViewName("/sso/login");
-        return  modelAndView;
+    public String index(){
+        return  "/sso/login";
     }
 
 }

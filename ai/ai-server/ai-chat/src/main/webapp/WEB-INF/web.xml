@@ -42,7 +42,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!-- druid -->
-    <servlet>
+    <!--<servlet>
         <servlet-name>DruidStatView</servlet-name>
         <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
     </servlet>
@@ -62,5 +62,5 @@
     <filter-mapping>
         <filter-name>DruidWebStatFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    </filter-mapping>-->
 </web-app>
