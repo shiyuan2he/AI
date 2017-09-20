@@ -34,6 +34,9 @@ public class BusinessUtils {
     public static <T> T requestJsonToBean(String json,Class<T> clazz){
         if(null == json || "".equals(json)) return  null;
         try{
+            if(json.contains("\\")) {
+                json = json.replace("\\","");
+            }
             RequestBodyBean<T> requestBody =  JSON.parseObject(json,new TypeReference<RequestBodyBean>(){}) ;
             return JSON.parseObject(requestBeanToJson(requestBody.getParam()),clazz) ;
         }catch(Exception e){
@@ -53,14 +56,5 @@ public class BusinessUtils {
      */
     public static String requestBeanToJson(Object obj){
         return JsonHelper.obj2Json(obj) ;
-    }
-    public static boolean validateParamForRegister(RegisterParam user){
-        if(StringUtils.isNotBlank(user.getName())
-                && StringUtils.isNotBlank(user.getPassword())
-                && StringUtils.isNotBlank(user.getSex())
-                && null != user.getTel()){
-            return true ;
-        }
-        return false ;
     }
 }

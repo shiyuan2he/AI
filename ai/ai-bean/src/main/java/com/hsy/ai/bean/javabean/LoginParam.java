@@ -12,22 +12,22 @@ package com.hsy.ai.bean.javabean;
  * @price ¥5    微信：hewei1109
  */
 public class LoginParam extends RequestParamGenericityBean{
-    private String password ;//登陆密码
-    private Long tel ;//登陆手机号
+    private String tel ;//登陆手机号
+    private String code ;//登陆验证码
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Long getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(Long tel) {
+    public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

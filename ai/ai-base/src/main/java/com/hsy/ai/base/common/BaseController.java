@@ -21,31 +21,6 @@ import javax.servlet.http.HttpServletResponse;
  * @price ¥5    微信：hewei1109
  */
 public class BaseController {
-    private static Logger _logger = LoggerFactory.getLogger(BaseController.class) ;
-    /**
-     * 统一异常处理
-     * @param request
-     * @param response
-     * @param exception
-     */
-    @ExceptionHandler
-    public String exceptionHandler(HttpServletRequest request, HttpServletResponse response, Exception exception) {
-        _logger.error("统一异常处理：",exception);
-        request.setAttribute("ex", exception);
-        if (null != request.getHeader("X-Requested-With") && request.getHeader("X-Requested-With").equalsIgnoreCase("XMLHttpRequest")) {
-            request.setAttribute("requestHeader", "ajax");
-        }
-        // shiro没有权限异常
-        /*if (exception instanceof UnauthorizedException) {
-            return "/403.jsp";
-        }*/
-        // shiro会话已过期异常
-        /*if (exception instanceof InvalidSessionException) {
-            return "/error.jsp";
-        }*/
-        return "/error/404";
-    }
-
     /**
      * 返回jsp视图
      * @param path

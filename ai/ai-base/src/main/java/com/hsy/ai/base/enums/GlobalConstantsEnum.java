@@ -31,6 +31,13 @@ public enum GlobalConstantsEnum {
     SYSTEM_SOURCE_IMAGE("ai-image","智能图像识别系统"),
     SYSTEM_SOURCE_VOICE("ai-voice","智能语音识别系统"),
 
+    // 加密方式
+    SECRET_TYPE_BASE64("BASE64","base64加密方式"),
+    SECRET_TYPE_AES("AES","AES加密方式"),
+    SECRET_TYPE_MD5("MD5","MD5加密方式"),
+
+    // 代码异常
+    EXCEPTION_NULL_POINTER("AI40001","空指针异常")
     ;
     private String code ;
     private String msg ;

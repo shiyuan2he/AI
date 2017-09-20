@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
-    <title>登陆</title>
+    <title>聊天</title>
     <link rel="stylesheet" href="<%=basePath%>/resources/ai-resource/css/style.css"/>
     <link rel="stylesheet" href="<%=basePath%>/resources/ai-resource/css/my.css"/>
     <script src="<%=basePath%>/resources/ai-resource/js/jquery-1.11.1.min.js"></script>
@@ -24,12 +24,14 @@
 <div style="width: 98%;height: 880px;padding:0">
     <div>
         <div style="width: 100%;height: 800px;">
-            <input style="width:100%;height:100%"/>
+            <ul id="chatContent" style="width:100%;height:100%">
+
+            </ul>
         </div>
     </div>
     <div class="chatinfo">
         <img src="<%=basePath%>/resources/ai-resource/images/login-yzm.png" alt="" class="login-phoneimg"/>
-        <input type="text" id="content" style="width: 4.85rem;" class="login-text login-pwd" value="" placeholder="请输入内容">
+        <input type="text" id="chatInfo" style="width: 4.85rem;" class="login-text login-pwd" value="" placeholder="请输入内容">
         <button class="login-yzm" onclick="javascript:chat.doChat();">发送</button>
     </div>
 </div>

@@ -1,5 +1,8 @@
 package com.hsy.ai.web.chat.exception;
 
+import com.alibaba.fastjson.JSON;
+import com.hsy.ai.base.enums.GlobalConstantsEnum;
+import com.hsy.ai.bean.javabean.ResponseBodyBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -8,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 
 /**
  * @author heshiyuan
@@ -26,22 +30,28 @@ public class GlobalException implements HandlerExceptionResolver{
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         //这里有2种选择
         //跳转到定制化的错误页面
-	    ModelAndView error = new ModelAndView();
+	    /*ModelAndView error = new ModelAndView();
         error.setViewName("/error/500");
 		error.addObject("code", ((BusinessException) ex).getCode());
-		error.addObject("message", ex.getMessage());
+		error.addObject("message", ex.getMessage());*/
         //返回json格式的错误信息
-        /*try {
+        try {
             response.setContentType("text/html;charset=UTF-8");
             response.setCharacterEncoding("utf-8");
             PrintWriter writer = response.getWriter();
-            String responseStr = JSON.toJSONString(new ResponseBodyBean<>(false,((BusinessException) ex).getCode(),ex.getMessage())) ;
+            String responseStr = "" ;
+            if(ex instanceof NullPointerException){
+                responseStr = JSON.toJSONString(new ResponseBodyBean<>(false,
+                        GlobalConstantsEnum.EXCEPTION_NULL_POINTER.getCode(),GlobalConstantsEnum.EXCEPTION_NULL_POINTER.getMsg()+ex.getLocalizedMessage())) ;
+            }else{
+                responseStr = JSON.toJSONString(new ResponseBodyBean<>(false,((BusinessException) ex).getCode(),ex.getMessage())) ;
+            }
             _logger.info("全局异常处理返回信息：{}",responseStr);
             writer.write(responseStr);
             writer.flush();
         } catch (Exception e) {
             _logger.error("全局处理异常失败,message:{}:",e.getMessage());
-        }*/
-        return error;
+        }
+        return null;
     }
 }

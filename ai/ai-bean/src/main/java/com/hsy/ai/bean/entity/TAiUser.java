@@ -4,67 +4,30 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TAiUser implements Serializable {
-    /**
-     * ä¸»é”®id
-     *
-     * @mbg.generated
-     */
+
     private String id;
 
-    /**
-     * ç”¨æˆ·å§“å
-     *
-     * @mbg.generated
-     */
+
     private String userName;
 
-    /**
-     * å¯†ç 
-     *
-     * @mbg.generated
-     */
+
     private String password;
 
-    /**
-     * ç”¨æˆ·æ˜µç§°
-     *
-     * @mbg.generated
-     */
+
     private String nickName;
 
-    /**
-     * æ‰‹æœºå·
-     *
-     * @mbg.generated
-     */
     private String phone;
 
-    /**
-     * åˆ›å»ºæ—¶é—´
-     *
-     * @mbg.generated
-     */
+
     private Date createTime;
 
-    /**
-     * æ›´æ–°æ—¶é—´
-     *
-     * @mbg.generated
-     */
+
     private Date updateName;
 
-    /**
-     * ç”¨æˆ·å¤‡æ³¨
-     *
-     * @mbg.generated
-     */
+
     private String remark;
 
-    /**
-     * ç”¨æˆ·çœŸå®žå§“å
-     *
-     * @mbg.generated
-     */
+
     private String realName;
 
     /**
@@ -74,21 +37,19 @@ public class TAiUser implements Serializable {
      */
     private String encryptType;
 
-    /**
-     * åˆ›å»ºè€…
-     *
-     * @mbg.generated
-     */
+
     private String createUser;
 
-    /**
-     * æ›´æ–°è€…
-     *
-     * @mbg.generated
-     */
     private String updateUser;
 
     private static final long serialVersionUID = 1L;
+
+    public TAiUser() {
+    }
+
+    public TAiUser(String id) {
+        this.id = id;
+    }
 
     public String getId() {
         return id;
