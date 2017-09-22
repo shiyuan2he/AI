@@ -17,6 +17,7 @@
         <module>ai-server</module>
         <module>ai-datamodel</module>
         <module>ai-resource</module>
+        <module>ai-consumer</module>
     </modules>
     <properties>
         <!--servlet start-->
@@ -40,6 +41,7 @@
         <!--tool jar start-->
         <version.jackson>2.8.8</version.jackson>
         <version.kaptcha>2.3</version.kaptcha>
+        <version.rabbitmq>4.2.1</version.rabbitmq>
         <!--tool jar end-->
 
         <!--plugin start-->
@@ -161,6 +163,11 @@
                 <groupId>com.google.code.kaptcha</groupId>
                 <artifactId>kaptcha</artifactId>
                 <version>0.0.9</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${version.rabbitmq}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
