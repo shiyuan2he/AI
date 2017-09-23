@@ -3,18 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ai</artifactId>
+        <artifactId>ai-service</artifactId>
         <groupId>com.hsy.ai</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ai-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>ai-service-common</module>
-        <module>ai-service-chat</module>
-    </modules>
+    <artifactId>ai-service-chat</artifactId>
+    <packaging>jar</packaging>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.hsy.ai</groupId>
+            <artifactId>ai-dao-chat</artifactId>
+        </dependency>
+    </dependencies>
 </project>

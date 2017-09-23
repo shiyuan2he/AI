@@ -2053,8 +2053,8 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Code>t_ai_chat_sinogram</a:Code>
 <a:CreationDate>1506313897</a:CreationDate>
 <a:Creator>robot</a:Creator>
-<a:ModificationDate>1506314818</a:ModificationDate>
-<a:Modifier>robot</a:Modifier>
+<a:ModificationDate>1506085990</a:ModificationDate>
+<a:Modifier>spwang</a:Modifier>
 <a:Comment>汉字字典表</a:Comment>
 <a:TotalSavingCurrency/>
 <c:Columns>
@@ -2077,10 +2077,10 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Code>key</a:Code>
 <a:CreationDate>1506313897</a:CreationDate>
 <a:Creator>robot</a:Creator>
-<a:ModificationDate>1506314681</a:ModificationDate>
-<a:Modifier>robot</a:Modifier>
+<a:ModificationDate>1506085990</a:ModificationDate>
+<a:Modifier>spwang</a:Modifier>
 <a:Comment>键</a:Comment>
-<a:DataType>varcher(10)</a:DataType>
+<a:DataType>varchar(10)</a:DataType>
 <a:Length>10</a:Length>
 </o:Column>
 <o:Column Id="o43">
@@ -2101,9 +2101,9 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Code>value_length</a:Code>
 <a:CreationDate>1506313897</a:CreationDate>
 <a:Creator>robot</a:Creator>
-<a:ModificationDate>1506314681</a:ModificationDate>
-<a:Modifier>robot</a:Modifier>
-<a:Comment>value长度</a:Comment>
+<a:ModificationDate>1506086045</a:ModificationDate>
+<a:Modifier>spwang</a:Modifier>
+<a:Comment>长度</a:Comment>
 <a:DataType>int(1)</a:DataType>
 <a:Length>1</a:Length>
 </o:Column>

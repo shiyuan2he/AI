@@ -15,6 +15,7 @@
         <module>ai-chat</module>
         <module>ai-voice</module>
         <module>ai-image</module>
+        <module>ai-mq</module>
     </modules>
 
 

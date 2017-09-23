@@ -155,6 +155,11 @@
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>
+                <groupId>com.hsy.ai</groupId>
+                <artifactId>ai-dao-chat</artifactId>
+                <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.code</groupId>
                 <artifactId>kaptcha</artifactId>
                 <version>2.3.0</version>
