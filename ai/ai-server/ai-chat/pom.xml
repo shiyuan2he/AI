@@ -22,6 +22,10 @@
             <artifactId>ai-resource</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.hsy.java</groupId>
+            <artifactId>java-thread</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.hsy.ai</groupId>
             <artifactId>ai-web-chat</artifactId>
         </dependency>

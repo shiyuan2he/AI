@@ -16,21 +16,21 @@ public class TAiChatSinogram implements Serializable {
      *
      * @mbg.generated
      */
-    private String key;
+    private String code;
 
     /**
      * 值
      *
      * @mbg.generated
      */
-    private String value;
+    private String message;
 
     /**
      * 长度
      *
      * @mbg.generated
      */
-    private Integer valueLength;
+    private Integer messageLength;
 
     /**
      * 分类
@@ -84,28 +84,28 @@ public class TAiChatSinogram implements Serializable {
         this.id = id;
     }
 
-    public String getKey() {
-        return key;
+    public String getCode() {
+        return code;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getValue() {
-        return value;
+    public String getMessage() {
+        return message;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public Integer getValueLength() {
-        return valueLength;
+    public Integer getMessageLength() {
+        return messageLength;
     }
 
-    public void setValueLength(Integer valueLength) {
-        this.valueLength = valueLength;
+    public void setMessageLength(Integer messageLength) {
+        this.messageLength = messageLength;
     }
 
     public String getGrouptype() {
@@ -163,9 +163,9 @@ public class TAiChatSinogram implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", key=").append(key);
-        sb.append(", value=").append(value);
-        sb.append(", valueLength=").append(valueLength);
+        sb.append(", code=").append(code);
+        sb.append(", message=").append(message);
+        sb.append(", messageLength=").append(messageLength);
         sb.append(", grouptype=").append(grouptype);
         sb.append(", createTime=").append(createTime);
         sb.append(", createUser=").append(createUser);
@@ -189,9 +189,9 @@ public class TAiChatSinogram implements Serializable {
         }
         TAiChatSinogram other = (TAiChatSinogram) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getKey() == null ? other.getKey() == null : this.getKey().equals(other.getKey()))
-            && (this.getValue() == null ? other.getValue() == null : this.getValue().equals(other.getValue()))
-            && (this.getValueLength() == null ? other.getValueLength() == null : this.getValueLength().equals(other.getValueLength()))
+            && (this.getCode() == null ? other.getCode() == null : this.getCode().equals(other.getCode()))
+            && (this.getMessage() == null ? other.getMessage() == null : this.getMessage().equals(other.getMessage()))
+            && (this.getMessageLength() == null ? other.getMessageLength() == null : this.getMessageLength().equals(other.getMessageLength()))
             && (this.getGrouptype() == null ? other.getGrouptype() == null : this.getGrouptype().equals(other.getGrouptype()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getCreateUser() == null ? other.getCreateUser() == null : this.getCreateUser().equals(other.getCreateUser()))
@@ -205,9 +205,9 @@ public class TAiChatSinogram implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getKey() == null) ? 0 : getKey().hashCode());
-        result = prime * result + ((getValue() == null) ? 0 : getValue().hashCode());
-        result = prime * result + ((getValueLength() == null) ? 0 : getValueLength().hashCode());
+        result = prime * result + ((getCode() == null) ? 0 : getCode().hashCode());
+        result = prime * result + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        result = prime * result + ((getMessageLength() == null) ? 0 : getMessageLength().hashCode());
         result = prime * result + ((getGrouptype() == null) ? 0 : getGrouptype().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getCreateUser() == null) ? 0 : getCreateUser().hashCode());

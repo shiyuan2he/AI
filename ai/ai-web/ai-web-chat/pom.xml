@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.hsy.java</groupId>
+            <artifactId>java-thread</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.hsy.ai</groupId>
             <artifactId>ai-service-common</artifactId>
         </dependency>

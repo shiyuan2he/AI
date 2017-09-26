@@ -54,13 +54,13 @@
                         password="root@mariadb" />
 
         <!-- model生成 -->
-        <javaModelGenerator targetPackage="com.hsy.ai.bean.entity" targetProject="/D:/devTools/repository/git/AI/ai/ai-bean/src/main/java" />
+        <javaModelGenerator targetPackage="com.hsy.ai.bean.entity" targetProject="/Users/heshiyuan/data/devTools/repo/git/AI/ai/ai-bean/src/main/java" />
 
         <!-- MapperXML生成 -->
-        <sqlMapGenerator targetPackage=".mapper" targetProject="/D:/devTools/repository/git/AI/ai/ai-dao/ai-dao-chat/src/main/resources" />
+        <sqlMapGenerator targetPackage=".mapper" targetProject="/Users/heshiyuan/data/devTools/repo/git/AI/ai/ai-dao/ai-dao-chat/src/main/resources" />
 
         <!-- Mapper接口生成 -->
-        <javaClientGenerator targetPackage="com.hsy.ai.dao.chat.dao" targetProject="/D:/devTools/repository/git/AI/ai/ai-dao/ai-dao-chat/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="com.hsy.ai.dao.chat.dao" targetProject="/Users/heshiyuan/data/devTools/repo/git/AI/ai/ai-dao/ai-dao-chat/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
                                     <table tableName="t_ai_chat_sinogram" domainObjectName="TAiChatSinogram"></table>

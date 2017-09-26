@@ -17,7 +17,6 @@
         <module>ai-server</module>
         <module>ai-datamodel</module>
         <module>ai-resource</module>
-        <module>ai-consumer</module>
     </modules>
     <properties>
         <!--servlet start-->
@@ -80,6 +79,11 @@
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>
+                <groupId>com.hsy.ai</groupId>
+                <artifactId>ai-web-task</artifactId>
+                <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
@@ -87,6 +91,16 @@
             <dependency>
                 <groupId>com.hsy.java</groupId>
                 <artifactId>java-util</artifactId>
+                <version>${version.hsy.java}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hsy.java</groupId>
+                <artifactId>java-base</artifactId>
+                <version>${version.hsy.java}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hsy.java</groupId>
+                <artifactId>java-thread</artifactId>
                 <version>${version.hsy.java}</version>
             </dependency>
             <dependency>
@@ -146,12 +160,22 @@
             </dependency>
             <dependency>
                 <groupId>com.hsy.ai</groupId>
+                <artifactId>ai-service-chat</artifactId>
+                <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hsy.ai</groupId>
                 <artifactId>ai-web-chat</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>
                 <groupId>com.hsy.ai</groupId>
                 <artifactId>ai-resource</artifactId>
+                <version>${version.hsy.ai}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hsy.ai</groupId>
+                <artifactId>ai-web-mq</artifactId>
                 <version>${version.hsy.ai}</version>
             </dependency>
             <dependency>

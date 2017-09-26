@@ -198,203 +198,203 @@ public class TAiChatSinogramExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andKeyIsNull() {
-            addCriterion("key is null");
+        public Criteria andCodeIsNull() {
+            addCriterion("code is null");
             return (Criteria) this;
         }
 
-        public Criteria andKeyIsNotNull() {
-            addCriterion("key is not null");
+        public Criteria andCodeIsNotNull() {
+            addCriterion("code is not null");
             return (Criteria) this;
         }
 
-        public Criteria andKeyEqualTo(String value) {
-            addCriterion("key =", value, "key");
+        public Criteria andCodeEqualTo(String value) {
+            addCriterion("code =", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotEqualTo(String value) {
-            addCriterion("key <>", value, "key");
+        public Criteria andCodeNotEqualTo(String value) {
+            addCriterion("code <>", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThan(String value) {
-            addCriterion("key >", value, "key");
+        public Criteria andCodeGreaterThan(String value) {
+            addCriterion("code >", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyGreaterThanOrEqualTo(String value) {
-            addCriterion("key >=", value, "key");
+        public Criteria andCodeGreaterThanOrEqualTo(String value) {
+            addCriterion("code >=", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThan(String value) {
-            addCriterion("key <", value, "key");
+        public Criteria andCodeLessThan(String value) {
+            addCriterion("code <", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyLessThanOrEqualTo(String value) {
-            addCriterion("key <=", value, "key");
+        public Criteria andCodeLessThanOrEqualTo(String value) {
+            addCriterion("code <=", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyLike(String value) {
-            addCriterion("key like", value, "key");
+        public Criteria andCodeLike(String value) {
+            addCriterion("code like", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotLike(String value) {
-            addCriterion("key not like", value, "key");
+        public Criteria andCodeNotLike(String value) {
+            addCriterion("code not like", value, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyIn(List<String> values) {
-            addCriterion("key in", values, "key");
+        public Criteria andCodeIn(List<String> values) {
+            addCriterion("code in", values, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotIn(List<String> values) {
-            addCriterion("key not in", values, "key");
+        public Criteria andCodeNotIn(List<String> values) {
+            addCriterion("code not in", values, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyBetween(String value1, String value2) {
-            addCriterion("key between", value1, value2, "key");
+        public Criteria andCodeBetween(String value1, String value2) {
+            addCriterion("code between", value1, value2, "code");
             return (Criteria) this;
         }
 
-        public Criteria andKeyNotBetween(String value1, String value2) {
-            addCriterion("key not between", value1, value2, "key");
+        public Criteria andCodeNotBetween(String value1, String value2) {
+            addCriterion("code not between", value1, value2, "code");
             return (Criteria) this;
         }
 
-        public Criteria andValueIsNull() {
-            addCriterion("value is null");
+        public Criteria andMessageIsNull() {
+            addCriterion("message is null");
             return (Criteria) this;
         }
 
-        public Criteria andValueIsNotNull() {
-            addCriterion("value is not null");
+        public Criteria andMessageIsNotNull() {
+            addCriterion("message is not null");
             return (Criteria) this;
         }
 
-        public Criteria andValueEqualTo(String value) {
-            addCriterion("value =", value, "value");
+        public Criteria andMessageEqualTo(String value) {
+            addCriterion("message =", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueNotEqualTo(String value) {
-            addCriterion("value <>", value, "value");
+        public Criteria andMessageNotEqualTo(String value) {
+            addCriterion("message <>", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueGreaterThan(String value) {
-            addCriterion("value >", value, "value");
+        public Criteria andMessageGreaterThan(String value) {
+            addCriterion("message >", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueGreaterThanOrEqualTo(String value) {
-            addCriterion("value >=", value, "value");
+        public Criteria andMessageGreaterThanOrEqualTo(String value) {
+            addCriterion("message >=", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueLessThan(String value) {
-            addCriterion("value <", value, "value");
+        public Criteria andMessageLessThan(String value) {
+            addCriterion("message <", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueLessThanOrEqualTo(String value) {
-            addCriterion("value <=", value, "value");
+        public Criteria andMessageLessThanOrEqualTo(String value) {
+            addCriterion("message <=", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueLike(String value) {
-            addCriterion("value like", value, "value");
+        public Criteria andMessageLike(String value) {
+            addCriterion("message like", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueNotLike(String value) {
-            addCriterion("value not like", value, "value");
+        public Criteria andMessageNotLike(String value) {
+            addCriterion("message not like", value, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueIn(List<String> values) {
-            addCriterion("value in", values, "value");
+        public Criteria andMessageIn(List<String> values) {
+            addCriterion("message in", values, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueNotIn(List<String> values) {
-            addCriterion("value not in", values, "value");
+        public Criteria andMessageNotIn(List<String> values) {
+            addCriterion("message not in", values, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueBetween(String value1, String value2) {
-            addCriterion("value between", value1, value2, "value");
+        public Criteria andMessageBetween(String value1, String value2) {
+            addCriterion("message between", value1, value2, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueNotBetween(String value1, String value2) {
-            addCriterion("value not between", value1, value2, "value");
+        public Criteria andMessageNotBetween(String value1, String value2) {
+            addCriterion("message not between", value1, value2, "message");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthIsNull() {
-            addCriterion("value_length is null");
+        public Criteria andMessageLengthIsNull() {
+            addCriterion("message_length is null");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthIsNotNull() {
-            addCriterion("value_length is not null");
+        public Criteria andMessageLengthIsNotNull() {
+            addCriterion("message_length is not null");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthEqualTo(Integer value) {
-            addCriterion("value_length =", value, "valueLength");
+        public Criteria andMessageLengthEqualTo(Integer value) {
+            addCriterion("message_length =", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthNotEqualTo(Integer value) {
-            addCriterion("value_length <>", value, "valueLength");
+        public Criteria andMessageLengthNotEqualTo(Integer value) {
+            addCriterion("message_length <>", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthGreaterThan(Integer value) {
-            addCriterion("value_length >", value, "valueLength");
+        public Criteria andMessageLengthGreaterThan(Integer value) {
+            addCriterion("message_length >", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthGreaterThanOrEqualTo(Integer value) {
-            addCriterion("value_length >=", value, "valueLength");
+        public Criteria andMessageLengthGreaterThanOrEqualTo(Integer value) {
+            addCriterion("message_length >=", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthLessThan(Integer value) {
-            addCriterion("value_length <", value, "valueLength");
+        public Criteria andMessageLengthLessThan(Integer value) {
+            addCriterion("message_length <", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthLessThanOrEqualTo(Integer value) {
-            addCriterion("value_length <=", value, "valueLength");
+        public Criteria andMessageLengthLessThanOrEqualTo(Integer value) {
+            addCriterion("message_length <=", value, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthIn(List<Integer> values) {
-            addCriterion("value_length in", values, "valueLength");
+        public Criteria andMessageLengthIn(List<Integer> values) {
+            addCriterion("message_length in", values, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthNotIn(List<Integer> values) {
-            addCriterion("value_length not in", values, "valueLength");
+        public Criteria andMessageLengthNotIn(List<Integer> values) {
+            addCriterion("message_length not in", values, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthBetween(Integer value1, Integer value2) {
-            addCriterion("value_length between", value1, value2, "valueLength");
+        public Criteria andMessageLengthBetween(Integer value1, Integer value2) {
+            addCriterion("message_length between", value1, value2, "messageLength");
             return (Criteria) this;
         }
 
-        public Criteria andValueLengthNotBetween(Integer value1, Integer value2) {
-            addCriterion("value_length not between", value1, value2, "valueLength");
+        public Criteria andMessageLengthNotBetween(Integer value1, Integer value2) {
+            addCriterion("message_length not between", value1, value2, "messageLength");
             return (Criteria) this;
         }
 

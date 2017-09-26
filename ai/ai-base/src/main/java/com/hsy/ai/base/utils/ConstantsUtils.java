@@ -10,4 +10,9 @@ package com.hsy.ai.base.utils;
  * @price ¥5    微信：hewei1109
  */
 public class ConstantsUtils {
+    public static String AI_DAO_CHAT_LIST_KEY = "ai:dao:chat:list" ;
+    /**
+     * @description <p>30分钟</p>
+     */
+    public static long AI_DAO_CHAT_LIVE_TIME = 30l ;
 }

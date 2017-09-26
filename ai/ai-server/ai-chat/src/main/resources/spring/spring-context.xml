@@ -34,8 +34,7 @@
     <import resource="spring-thread.xml"/>
     <!--
     <import resource="spring-redis.xml"/>
-    <import resource="spring-quartz.xml"/>
     <import resource="spring-tx.xml"/>-->
 	<!--全局异常捕捉 -->
-	<bean class="com.hsy.ai.web.chat.exception.GlobalException"/>
+	<bean class="com.hsy.ai.base.exception.GlobalException"/>
 </beans>

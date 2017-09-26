@@ -16,6 +16,7 @@
         <module>ai-voice</module>
         <module>ai-image</module>
         <module>ai-mq</module>
+        <module>ai-task</module>
     </modules>
 
 

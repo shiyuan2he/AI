@@ -3,9 +3,9 @@
 <mapper namespace="com.hsy.ai.dao.chat.dao.TAiChatSinogramMapper">
   <resultMap id="BaseResultMap" type="com.hsy.ai.bean.entity.TAiChatSinogram">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="key" jdbcType="VARCHAR" property="key" />
-    <result column="value" jdbcType="VARCHAR" property="value" />
-    <result column="value_length" jdbcType="INTEGER" property="valueLength" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="message_length" jdbcType="INTEGER" property="messageLength" />
     <result column="groupType" jdbcType="VARCHAR" property="grouptype" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_user" jdbcType="VARCHAR" property="createUser" />
@@ -72,8 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, key, value, value_length, groupType, create_time, create_user, update_time, update_user, 
-    sort
+    id, code, message, message_length, groupType, create_time, create_user, update_time, 
+    update_user, sort
   </sql>
   <select id="selectByExample" parameterType="com.hsy.ai.bean.entity.TAiChatSinogramExample" resultMap="BaseResultMap">
     select
@@ -114,12 +114,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.hsy.ai.bean.entity.TAiChatSinogram">
-    insert into t_ai_chat_sinogram (id, key, value, 
-      value_length, groupType, create_time, 
+    insert into t_ai_chat_sinogram (id, code, message, 
+      message_length, groupType, create_time, 
       create_user, update_time, update_user, 
       sort)
-    values (#{id,jdbcType=VARCHAR}, #{key,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, 
-      #{valueLength,jdbcType=INTEGER}, #{grouptype,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
+      #{messageLength,jdbcType=INTEGER}, #{grouptype,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
       #{sort,jdbcType=INTEGER})
   </insert>
@@ -129,14 +129,14 @@
       <if test="id != null">
         id,
       </if>
-      <if test="key != null">
-        key,
+      <if test="code != null">
+        code,
       </if>
-      <if test="value != null">
-        value,
+      <if test="message != null">
+        message,
       </if>
-      <if test="valueLength != null">
-        value_length,
+      <if test="messageLength != null">
+        message_length,
       </if>
       <if test="grouptype != null">
         groupType,
@@ -161,14 +161,14 @@
       <if test="id != null">
         #{id,jdbcType=VARCHAR},
       </if>
-      <if test="key != null">
-        #{key,jdbcType=VARCHAR},
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
       </if>
-      <if test="value != null">
-        #{value,jdbcType=VARCHAR},
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
       </if>
-      <if test="valueLength != null">
-        #{valueLength,jdbcType=INTEGER},
+      <if test="messageLength != null">
+        #{messageLength,jdbcType=INTEGER},
       </if>
       <if test="grouptype != null">
         #{grouptype,jdbcType=VARCHAR},
@@ -202,14 +202,14 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=VARCHAR},
       </if>
-      <if test="record.key != null">
-        key = #{record.key,jdbcType=VARCHAR},
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
       </if>
-      <if test="record.value != null">
-        value = #{record.value,jdbcType=VARCHAR},
+      <if test="record.message != null">
+        message = #{record.message,jdbcType=VARCHAR},
       </if>
-      <if test="record.valueLength != null">
-        value_length = #{record.valueLength,jdbcType=INTEGER},
+      <if test="record.messageLength != null">
+        message_length = #{record.messageLength,jdbcType=INTEGER},
       </if>
       <if test="record.grouptype != null">
         groupType = #{record.grouptype,jdbcType=VARCHAR},
@@ -237,9 +237,9 @@
   <update id="updateByExample" parameterType="map">
     update t_ai_chat_sinogram
     set id = #{record.id,jdbcType=VARCHAR},
-      key = #{record.key,jdbcType=VARCHAR},
-      value = #{record.value,jdbcType=VARCHAR},
-      value_length = #{record.valueLength,jdbcType=INTEGER},
+      code = #{record.code,jdbcType=VARCHAR},
+      message = #{record.message,jdbcType=VARCHAR},
+      message_length = #{record.messageLength,jdbcType=INTEGER},
       groupType = #{record.grouptype,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       create_user = #{record.createUser,jdbcType=VARCHAR},
@@ -253,14 +253,14 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.hsy.ai.bean.entity.TAiChatSinogram">
     update t_ai_chat_sinogram
     <set>
-      <if test="key != null">
-        key = #{key,jdbcType=VARCHAR},
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
       </if>
-      <if test="value != null">
-        value = #{value,jdbcType=VARCHAR},
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
       </if>
-      <if test="valueLength != null">
-        value_length = #{valueLength,jdbcType=INTEGER},
+      <if test="messageLength != null">
+        message_length = #{messageLength,jdbcType=INTEGER},
       </if>
       <if test="grouptype != null">
         groupType = #{grouptype,jdbcType=VARCHAR},
@@ -285,9 +285,9 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hsy.ai.bean.entity.TAiChatSinogram">
     update t_ai_chat_sinogram
-    set key = #{key,jdbcType=VARCHAR},
-      value = #{value,jdbcType=VARCHAR},
-      value_length = #{valueLength,jdbcType=INTEGER},
+    set code = #{code,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      message_length = #{messageLength,jdbcType=INTEGER},
       groupType = #{grouptype,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_user = #{createUser,jdbcType=VARCHAR},
